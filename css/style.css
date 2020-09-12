@@ -1,0 +1,249 @@
+/* /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    background: url("../images/landingBg.png") no-repeat fixed center;
+    background-color:rgba(218, 206, 68, 0.1);
+    transition: all .5s ease; 
+}
+
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/*customized scollbar UI*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+
+}
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+    -webkit-box-shadow:transparent;
+    border-radius: 6px;
+
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+   /* -webkit-box-shadow: inset 0 0 10px rgba(11,183,148,1);*/
+    -webkit-box-shadow: inset 0 0 12px #811239;
+}
+
+/*DashBoars Start*/
+header .headerIn{
+  width: 100%;
+    padding: 0px 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0px 0px 11px -8px #717171;
+    background: rgba(218, 206, 68, 0.1);
+}
+.logo{
+  width: 48px;
+  height: 40px;
+  background: #000;
+  border-radius: 0px 0px 6px 6px;
+}
+.navIn ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+.navIn ul li{
+  padding: 0 12px;
+  list-style-type: none;
+}
+.navIn ul li a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  display: block;
+}
+.navIn ul li a:hover{
+  color: #d3d3d3;
+}
+.mainIn{
+  width: 80vw;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+  /*.roundcontentmain ul{
+    position: absolute;
+  }*/
+.slideRound{
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  transition: all .5s ease;
+}
+.slideRound img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*.activeRound .slideRound{
+  width: 35vw;
+  height: 35vw;
+}*/
+/*.settlePos .slideRound{
+  left: 3vw;
+  top: 8vw;
+  transition: all .5s ease
+}*/
+.settlePoslast .slideRound{
+  right: 3vw;
+  top: 8vw;
+  transition: all .5s linear
+
+}
+.nextPrevButton{
+  padding-top: 24px;
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    color: red;
+        position: absolute;
+    bottom: 6vw;
+}
+.prevCus{
+  transform: rotate(180deg);
+  display: block; 
+}
+.prev,.next{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.pdLR12{
+  padding: 0 12px;
+}
+main{
+  position: relative;
+}
+.pageCount{
+  width: 47px;
+  height: 55px;
+  background: rgba(218, 206, 68, 1);
+  color: #fff;
+  position: absolute;
+  bottom: 24px;
+  left: 60px;
+  text-align: center;
+  line-height: 52px;
+  font-size: 36px;
+  transition: all 1s ease;
+  border-radius: 10px;
+}
+.roundcontentmain ul li{
+  position: absolute;
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg)
+}
+
+
+.roundcontentmain ul li.constDiv{
+  left: 180%;
+  top: 90%;
+  transition: all 2s ease;
+  transform: translate(-50%, -50%) rotate(0deg)
+}
+.roundcontentmain ul li.constDiv.firstAction{
+  left: 79%;
+  top: 60%;
+  transition: all 2s ease;
+  transform: translate(-50%, -50%) rotate(0deg)
+}
+.roundcontentmain ul li.constDiv.secondAction{
+  left: 50%;
+  top: 50%;
+  transition: all 2s ease;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index:2;
+}
+.roundcontentmain ul li.constDiv.secondAction .slideRound{
+  width: 35vw;
+  height: 35vw;
+}
+.roundcontentmain ul li.constDiv.thirdAction{
+  left: 22%;
+  top: 60%;
+  transition: all 2s ease;
+  transform: translate(-50%, -50%) rotate(0deg)
+}
+.roundcontentmain ul li.constDiv.fourthAction{
+  left: -80%;
+  top: 60%;
+  transition: all 2s ease;
+  transform: translate(-50%, -50%) rotate(0deg)
+}
+

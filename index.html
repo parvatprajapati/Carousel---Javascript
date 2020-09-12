@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" type="text/css" href="fonts/style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+<style>
+   
+</style>
+</head>
+<body>
+	<header>
+        <div class="headerIn">
+            <div class="logo"></div>
+            <nav>
+                <div class="navIn">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Testimonial</a></li>
+                        <li><a href="">Enquary</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href=""><span class="icon-search" style="font-size: 18px"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>   
+    </header>
+    <!-- main start -->
+    <main>
+        <div class="mainIn">
+            <div class="roundcontentmain">
+                <ul>
+                    <li class="constDiv thirdAction">
+                        <div class="slideRound"><img src="images/1.jpg"></div>
+                    </li>
+                    <li class="constDiv secondAction">
+                        <div class="slideRound"><img src="images/2.jpg"></div>
+                    </li>
+                    <li class="constDiv firstAction">
+                        <div class="slideRound"><img src="images/3.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/4.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/5.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/6.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/7.jpg"></div>
+                    </li>
+                   <li class="constDiv">
+                        <div class="slideRound"><img src="images/8.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/9.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/10.jpg"></div>
+                    </li>
+                    <li class="constDiv">
+                        <div class="slideRound"><img src="images/11.jpg"></div>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+        <div class="pageCount">0</div>
+    </main>
+</body>
+<script>
+    const slides = document.querySelectorAll('.roundcontentmain ul li')
+    const nextButton = document.querySelector('.next')
+     const prevButton = document.querySelector('.prev')
+    const pageCount = document.querySelector('.pageCount')
+    let slide = 1;
+    const body = document.querySelector('body')
+    const headerIn = document.querySelector('.headerIn')
+
+    const bgColor = ['rgba(176, 161, 96, .1)','rgba(168, 192, 255,.1)','rgba(64, 224, 208,.1)','rgba(41, 161, 156, .1)','rgba(1, 10, 67, .1)','rgba(222, 255, 139, .1)','rgba(255, 164, 27, .1)','rgba(152, 24, 214, .1)']
+    const bgColorPager = ['rgba(176, 161, 96, 1)','rgba(168, 192, 255,1)','rgba(64, 224, 208,1)','rgba(41, 161, 156, 1)','rgba(1, 10, 67, 1)','rgba(222, 255, 139, 1)','rgba(255, 164, 27, 1)','rgba(152, 24, 214, 1)']
+ 
+  function roundSlider(){
+    let currentSlide = Math.abs(slide % slides.length)
+    slides.forEach(function(e){
+        e.classList.remove('firstAction','secondAction','thirdAction');
+    })
+        slides[currentSlide].classList.add('thirdAction')
+        slides[currentSlide+1].classList.add('secondAction')
+        slides[currentSlide+2].classList.add('firstAction')
+        
+        console.log(slide)
+        if (slide==slides.length - 3) {
+          slide=0
+        }
+        pageCount.innerHTML=currentSlide;
+        pageCount.style.backgroundColor=bgColorPager[slide]
+        body.style.backgroundColor = bgColor[slide];
+        headerIn.style.backgroundColor = bgColor[slide];
+  }
+  function next(){
+    roundSlider()
+    slide++
+    
+  }
+
+  function prev(){
+    roundSlider()
+   slide--
+
+  }
+  
+  function autoPlay(){
+    setInterval(function(){
+      slide++
+      roundSlider()
+    }, 3000);
+    
+  }
+  autoPlay()
+  
+
+
+  nextButton.addEventListener("click",next)
+  prevButton.addEventListener("click",prev)
+ 
+
+</script>
+</html>
